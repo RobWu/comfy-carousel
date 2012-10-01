@@ -4,7 +4,7 @@ class Admin::Carousel::CarouselsController < Admin::Carousel::BaseController
   before_filter :load_carousel,   :only => [:edit, :update, :destroy]
   
   def index
-    @carousels = Carousel::Carousel.all
+    @carousels = ::Carousel::Carousel.all
   end
   
   def new
@@ -44,7 +44,7 @@ class Admin::Carousel::CarouselsController < Admin::Carousel::BaseController
 protected
   
   def build_carousel
-    @carousel = Carousel::Carousel.new(params[:carousel])
+    @carousel = ::Carousel::Carousel.new(params[:carousel])
   end
   
 end
